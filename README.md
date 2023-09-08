@@ -9,7 +9,7 @@ The app consists of a browser extension that captures the `outerHTML` of the cli
 
 1. Install the required Python packages by running:
 ```
-pip install websockets pandas
+pip install websockets pandas tk
 ```
 
 2. Install the browser extension:
