@@ -39,6 +39,4 @@ python app.py
 
 This project is licensed under the MIT License.
 
-***
 
-You can customize the README file according to your needs. Make sure to include any additional information that is necessary for your app.
