@@ -1,6 +1,9 @@
 [
-    "Global Search", 
-    "post:more", 
-    "post", 
-    "post:comments_expand"
+    "fb_global_search",
+    "fb_global_search_filter:posts",
+    "fb_global_search_filter:posts:recent_posts",
+    "fb_global_search_filter:people",
+    "fb_global_search_filter:people:friends",
+    "fb_global_search_filter:people:friends:search",
+    "fb_global_search_filter:people:friends:anyone"
 ]

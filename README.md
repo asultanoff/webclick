@@ -35,6 +35,11 @@ python app.py
 
 5. The URL, `outerHTML`, and selected action will be saved to a CSV file named `data.csv` in the same directory as the Python script.
 
+
+## TODO
+* When selecting available action choices, the copy of the action text should be put in entry so that it could be easily changed
+* When typing in entry, I need autocompletion based on existing choices and closest match should be highlighted. Also I need to scroll matches with up/down arrow buttons
+
 ## License
 
 This project is licensed under the MIT License.

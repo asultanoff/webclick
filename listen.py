@@ -11,14 +11,15 @@ class ActionDialog(simpledialog.Dialog):
         super().__init__(parent)
         
     def body(self, master):
-        tk.Label(master, text="Select or create an action:").grid(row=0, column=0, sticky=tk.W)
+        tk.Label(master, text="Select or create an action:" ).grid(row=0, column=0, sticky=tk.W)
+        font = ('Helvetica', 12)
         
-        self.listbox = tk.Listbox(master)
+        self.listbox = tk.Listbox(master, font=font, height=5, width=50)
         self.listbox.grid(row=1, column=0, columnspan=2, sticky=tk.W+tk.E)
         for action in self.actions:
             self.listbox.insert(tk.END, action)
         
-        self.entry = tk.Entry(master)
+        self.entry = tk.Entry(master, font = font, width=50)
         self.entry.grid(row=2, column=0, sticky=tk.W+tk.E)
         
         return self.listbox
@@ -45,8 +46,11 @@ class App:
         action = dialog.result
         if action:
             print("Selected Action:", action)
-            self.df = self.df.append({'url': data['url'], 'selected_html': data['outerHTML'], 'rendered_html': data['page_html'], 'action': action}, ignore_index=True)
-            self.df.to_csv('data.csv', index=False)
+            new_row = pd.DataFrame([[data['url'], data['outerHTML'], action]], 
+                                columns=['url', 'selected_html', 'action'])
+            with open('data.csv', 'a') as f:
+                new_row.to_csv(f, header=False, index=False)
+
         self.save_actions()
 
     def load_actions(self):

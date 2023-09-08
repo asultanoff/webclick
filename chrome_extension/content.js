@@ -3,7 +3,7 @@ ws.onopen = function(event) {
     document.addEventListener('click', function(e) {
         var data = {
             url: window.location.href,
-            outerHTML: e.target.outerHTML
+            outerHTML: e.target.outerHTML,
         }
         ws.send(JSON.stringify(data));
     });
